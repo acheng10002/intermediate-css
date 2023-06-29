@@ -1,0 +1,88 @@
+/* Full height! */
+body {
+  min-height: 100vh; /* a single declaration on the body element contrains the app to the height of the viewport */
+}                   /* change height to min-height and the footer stays in place at the bottom of the screen until 
+                       it's pushed down by content */
+/* apply vh units to the height, min-height, or max-height of various elements to create full-screen sections, 
+   hero images, and more 
+   OddBird redesign, hero images have max-height: 55vh so they never push headlines off the page 
+    max-height: 85vh for a more image-dominated look
+    min-height: 90vh to sections */
+
+/*  Grid layout */
+body {
+  display: grid;
+  grid-template-areas: 'header header'
+                       'nav main'
+                       'footer footer';
+  grid-template-columns: minmax(auto, 12em) 5fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+h1 {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+nav {
+  grid-area: nav;
+}
+
+
+article {
+  grid-area: main;
+}
+
+
+/* Style */
+* {
+  box-sizing: border-box;
+}
+
+h1, footer {
+  background: lightgray;
+}
+
+nav {
+  border-right: 1px solid lightgray;
+}
+
+nav, article {
+  overflow-y: auto; /* overflow values are being applied on internal elements, so that my content isn't cut off */
+}
+
+h1, nav, article, footer {
+  padding: 1rem;
+}
+
+/* The height/width ratio for our video */
+body {
+  --ratio: 360 / 640;
+}
+
+/* Full-width video 
+   if I can count on the video being full-screen, I can set the height relative to the full viewport width */
+
+.full-width {
+  width: 100vw; /* we know it will be full-width */
+  height: calc(100vw * var(--ratio)); /* math doesn't have to happen in the browser with calc */
+}
+
+/* Constrained */
+.max-width {
+  --container-width: 30em;
+  
+  height: calc(100vw * var(--ratio));
+  max-height: calc(var(--container-width) * var(--ratio));
+
+  width: 100%;
+  max-width: var(--container-width);  
+}
+
+iframe {
+  display: block;
+  margin: 0 auto 1em;
+}

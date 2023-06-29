@@ -479,6 +479,12 @@ th {
 }
 */
 
+/* ABSOLUTE LENGTH UNITS AND RELATIVE LENGTH UNITS */
+
+html {
+  background-color: peachpuff;
+}
+
 .box {
   border: 4px solid navy;
   background-color: lightblue;
@@ -505,3 +511,172 @@ th {
   width: 10em; /* third box uses em units which are relative to the font size;
                    change the value to see that the font size of all the elements increases, but only this last box will get wider */
 }
+
+/* ems AND rems */
+
+html {
+  font-size: 16px;
+}
+
+.ems li {
+  font-size: 1.3em;
+}
+
+.rems li {
+  font-size: 1.3rem;
+}
+
+/* PERCENTAGES */
+
+.wrapper2 {
+  width: 400px;
+  border: 5px solid rebeccapurple;
+}
+
+.px2 {
+  width: 200px;
+}
+
+/* if I set an element's font size as a percentage, it will be a percentage of the font-size of the element's parent */
+/* if I use a percentage for a width value, it will be a percentage of the width of the parent */
+.percent {
+  width: 40%;
+}
+
+.percentage {
+  font-size: 80%; /* nested list items become progressively smaller as they inherit their sizing from their parents */
+}
+
+/* NUMBERS */
+
+.box2 {
+  opacity: 0.6;
+}
+
+/* COLOR KEYWORDS  */
+/* specifying colors with color keywords */
+.one {
+  background-color: antiquewhite;
+}
+
+.two {
+  background-color: blueviolet;
+}
+
+.three {
+  background-color: greenyellow;
+}
+
+/* HEXADECIMAL RGB VALUES */
+
+.four {
+  background-color: #02798b;
+}
+
+.five {
+  background-color: #c55da1;
+}
+
+.six {
+  background-color: #128a7d;
+}
+
+/* RGB AND RGBA VALUES */
+
+.seven {
+  background-color: rgb(2, 121, 139, .3); /* the fourth parameter is the alpha channel which controls opacity */
+}                                           /* using opacity makes an element and everything inside it opaque 
+                                               using RGB with an alpha parameter only makes the color I am specifying opaque */
+.eight {
+  background-color: rgb(197, 93, 161, .7);
+}
+
+.nine {
+  background-color: rgb(18, 138, 125, .9);
+}
+
+/* HSL AND HSLA VALUES */
+
+.ten {
+  background-color: hsl(188 97% 28% / .3); /* just like with rbg, I can pass an alpha parameter to hsl() to specify opacity */
+}
+
+.eleven {
+  background-color: hsl(321 47% 57% / .7);
+}
+
+.twelve {
+  background-color: hsl(174 77% 31% / .9);
+}
+
+/* IMAGES */
+
+/* an image and a gradient in use as a value for the CSS background-image property */
+.image {
+  background-image: url(vecteezy_star_1189165.png);
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.gradient {
+  background-image: linear-gradient(90deg, rgba(119,0,255,1) 39%, rgba(0,212,255,1) 100%);
+}
+
+/* POSITION */
+
+.box3 {
+  height: 700px;
+  width: 1100px;
+  background-image: url(vecteezy_star_1189165.png);
+  background-repeat: no-repeat;
+  background-position: right 40px; /* positioning a background image 40px from the top and to the 
+                       right of the container using a keyword */
+}
+
+/* STRINGS AND IDENTIFIERS */
+
+.box4 {
+  width:400px;
+  padding: 1em;
+  border-radius: .5em;
+  border: 5px solid rebeccapurple; /* using unquoted color keywords */
+  background-color: lightblue;
+}
+
+.box4::after {
+  content: "This is a string. I know because it is quoted in the CSS." /* using a quoted generated content string */
+}
+
+/* FUNCTIONS */
+.wrapper3 {
+  width: 400px;
+}
+
+.box5 {
+  width:400px;
+  padding: 1em;
+  border-radius: .5em;
+  border: 5px solid rebeccapurple; /* using unquoted color keywords */
+  background-color: lightblue;
+  width: calc(20% + 100px); /* 20% is calculated from the width of the parent container, .wrapper */
+}
+
+#body {
+  /* font grows 1px for every 100px of viewport width */
+  font-size: calc(16px + 1vw);
+  /* leading grows along with font,
+     with an additional 0.1em + 0.5px per 100px of the viewport */
+  line-height: calc(1.1em + 0.5vw);
+}
+
+#h1 {
+  /* constrains the top-end for rapid-growth headings */
+  font-size: calc(1.2em + 3vw);
+}
+
+@media (min-width: 50em) {
+  #h1 {
+    font-size: 50px;
+  }
+}
+

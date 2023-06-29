@@ -7,10 +7,155 @@
     <link rel="stylesheet" href="default-styles-and-css-units.css">
   </head>
   <body>
+    <h1>Example of absolute units and relative units</h1>
     <div class="wrapper">
         <div class="box px">I am 200px wide</div>
         <div class="box vw">I am 10vw wide</div>
         <div class="box em">I am 10em wide</div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>ems and rems</h1>
+    <!-- set of nested lists  -->
+    <!-- list 1 -->
+    <!-- em unit - means "my parent element's font-size" -->
+    <ul class="ems">
+        <!-- <li> elements inside the <ul> take their sizing from their parent -->
+        <!--  each successive level of nesting has its font size set to 1.3em, 1.3 times its parent's font size -->
+        <li>One</li>
+        <li>Two</li>
+        <li>Three
+          <!-- list 2 -->
+          <ul>
+            <li>Three A</li>
+            <li>Three B
+              <!-- list 3 -->
+              <ul>
+                <li>Three B 2</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      
+      <!-- list 1 -->
+      <!-- rem unit - means "the root element's font-size" -->
+      <ul class="rems">
+        <!-- <li> elements inside the <ul> take their sizing from the root element <html> -->
+        <li>One</li>
+        <li>Two</li>
+        <li>Three
+          <!-- list 2 -->
+          <ul>
+            <li>Three A</li>
+            <li>Three B
+              <!-- list 3 -->
+              <ul>
+                <li>Three B 2</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Percentages</h1>
+      <div class="box px2">I am 200px wide</div>
+      <div class="box percent">I am 40% wide</div>
+      <div class="wrapper2">
+        <!-- this second set of two boxes is inside a 400px wide wrapper -->
+        <div class="box px2">I am 200px wide</div> <!-- this 200px wide box is the same as the one above -->
+        <div class="box percent">I am 40% wide</div> <!-- this 40% box is 40% of the 400px wrapper instead of 40% of the html element -->
+      </div>
+      <br>
+      <br>
+      <ul>
+        <li class="percentage">One</li>
+        <li class="percentage">Two</li>
+        <li class="percentage">Three
+          <ul>
+            <li class="percentage">Three A</li>
+            <li class="percentage">Three B
+              <ul>
+                <li class="percentage">Three B 2</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul> 
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Numbers</h1>
+      <div class="wrapper2">
+        <div class="box2">I am a box with opacity</div>
+      </div> 
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Color</h1>
+      <div class="wrapper">
+        <div class="one">antiquewhite</div>
+        <br>
+        <div class="two">blueviolet</div>
+        <br>
+        <div class="three">greenyellow</div>
+      </div>
+      <br>
+      <br>
+      <div class="wrapper">
+        <div class="four">#02798b</div>
+        <br>
+        <div class="five">#c55da1</div>
+        <br>
+        <div class="six">#128a7d</div>
+      </div>
+      <br>
+      <br>
+      <div class="wrapper">
+        <div class="seven">rgb(2, 121, 139, .3)</div>
+        <br>
+        <div class="eight">rgb(197, 93, 161, .7)</div>
+        <br>
+        <div class="nine">rgb(18, 138, 125, .9)</div>
+      </div>
+      <br>
+      <br>
+      <div class="wrapper">
+        <div class="ten">hsl(188 97% 28% / .3)</div>
+        <br>
+        <div class="eleven">hsl(321 47% 57% / .7)</div>
+        <br>
+        <div class="twelve">hsl(174 77% 31% / .9)</div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Images</h1>
+      <div class="box image"></div>
+      <div class="box gradient"></div>  
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Position</h1>
+      <div class="box3"></div>
+      <h1>Strings and identifiers</h1>
+      <div class="box4"></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Functions</h1>
+      <div class="wrapper3">
+        <div class="box5">My width is calculated.</div> 
+      </div>
   </body>
 </html>
