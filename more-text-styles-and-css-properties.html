@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>More Text Styles and More CSS Properties</title>
+    <!-- online font libraries - Google Fonts, Font Library, or Adobe Fonts 
+         go to the website, select a font, and copy a snippet from the website to import that font 
+         website gives me either a <link> tag in my HTML file or an @import tag that can be dropped at the top of a CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/couture" type="text/css"/>
+    <link rel="stylesheet" href="more-text-styles-and-css-properties.css">
+  </head>
+  <body>
+    <h1>More Text Styles and More CSS Properties</h1>
+    <p>I <em>never</em> said he stole your money</p> <!-- use <em> element if italics is required for emphasis -->
+    <p>I never said <em>he</em> stole your money</p>
+    <p>I never said he stole <em>your</em> money</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Hello World!</h1>
+    <h1 class="wide">Hello World!</h1>
+    <h1 class="narrow">Hello World!</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eius quibusdam ut, maiores quasi, iure architecto, necessitatibus sed culpa maxime distinctio ipsa nam repellat nostrum laboriosam tempora. Mollitia, pariatur velit!</p>
+    <p class="line-height">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis sequi est modi, temporibus eaque fugiat molestias obcaecati distinctio cupiditate. Beatae itaque eum eos deserunt illo consequatur quisquam similique dolorum adipisci.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p class="topbanner">
+        Starry sky<br />
+        Twinkle twinkle<br />
+        Starry sky
+      </p>
+      <p class="warning">Here is a paragraph</p>
+      <p></p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="border">
+        This is a box with a border around it. 
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="outsetborder">I have a border, an outline, and a box shadow! Amazing, isn't it?</div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="borderradius">This is a box with rounded corners.</div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <pre id="example-1">
+        border: solid 10px;
+        border-radius: 10px 40px 40px 10px;
+      </pre>
+      
+      <pre id="example-2">
+        border: groove 1em red;
+        border-radius: 2em;
+      </pre>
+      
+      <pre id="example-3">
+        background: gold;
+        border: ridge gold;
+        border-radius: 13em/3em;
+      </pre>
+      
+      <pre id="example-4">
+        border: none;
+        border-radius: 40px 10px;
+        background: gold;
+      </pre>
+      
+      <pre id="example-5">
+        border: none;
+        border-radius: 50%;
+        background: burlywood;
+      </pre>
+      
+      <pre id="example-6">
+        border: dotted;
+        border-width: 10px 4px;
+        border-radius: 10px 40px;
+      </pre>
+      
+      <pre id="example-7">
+        border: dashed;
+        border-width: 2px 4px;
+        border-radius: 40px;
+      </pre>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="box box-shadow-1">box-shadow: 10px 5px 5px red;</div>
+      <br>
+      <br>
+      <div class="box box-shadow-2">box-shadow: 60px -16px teal;</div>
+      <br>
+      <br>
+      <div class="box box-shadow-3">box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);</div>
+      <br>
+      <br>
+      <div class="box box-shadow-4">box-shadow: inset 5em 1em gold;</div>
+      <br>
+      <br>
+      <div class="box box-shadow-5">box-shadow: 3px 3px red, -1em 0 .4em olive;</div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <blockquote>
+        <q>
+          You may shoot me with your words,<br />
+          You may cut me with your eyes,<br />
+          You may kill me with your hatefulness,<br />
+          But still, like air, I'll rise.
+        </q>
+        <p>&mdash; Maya Angelou</p>
+      </blockquote>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div><p class="zerooffsetandblur">Hello World</p></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="overflow-1">
+        <div class="overflow-2">
+            <code>visible</code>
+            <p class="overflow-3 visible">
+                Maya Angelou: "I've learned that people will forget what you said, people
+                will forget what you did, but people will never forget how you made them
+                feel."
+            </p>
+        </div>
+        <div class="overflow-2">
+            <code>hidden</code>
+            <p class=" overflow-3 hidden">
+                Maya Angelou: "I've learned that people will forget what you said, people
+                will forget what you did, but people will never forget how you made them
+                feel."
+            </p>
+        </div>
+        <div class="overflow-2">
+            <code>clip</code>
+            <p class="overflow-3 clip">
+                Maya Angelou: "I've learned that people will forget what you said, people
+                will forget what you did, but people will never forget how you made them
+                feel."
+            </p>
+        </div>
+        <div class="overflow-2">
+            <code>scroll</code>
+            <p class=" overflow-3 scroll">
+                Maya Angelou: "I've learned that people will forget what you said, people
+                will forget what you did, but people will never forget how you made them
+                feel."
+            </p>
+        </div>
+        <div class="overflow-2">
+            <code>auto</code>
+            <p class="overflow-3 auto">
+                Maya Angelou: "I've learned that people will forget what you said, people
+                will forget what you did, but people will never forget how you made them
+                feel."
+            </p>
+        </div>
+        <div class="overflow-2">
+            <code>overlay</code>
+            <p class="overflow-3 overlay">
+                Maya Angelou: "I've learned that people will forget what you said, people
+                will forget what you did, but people will never forget how you made them
+                feel."
+            </p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Setting opacity</h1>
+      <div class="opacity light">You can barely see this.</div>
+      <div class="opacity medium">This is easier to see.</div>
+      <div class="opacity heavy">This is very easy to see.</div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Setting opacity on hover</h1>
+      <div class="wrapper">
+        <img
+          src="https://interactive-examples.mdn.mozilla.net/media/dino.svg"
+          alt="MDN Dino"
+          width="128"
+          height="146"
+          class="onhover" />
+      </div>
+    </body>
+</html>

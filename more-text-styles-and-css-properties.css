@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* system font stack - try using the default font of the system's ui, go through each font until it finds one
+   that is installed on the system, and uses that */
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* @ font-face rule - used to import and define a custom font in a CSS file */
+/* there are mutliple types of font file formats, but some are not universally supported by browsers */
+@font-face {
+    font-family: my-cool-font;
+    src: url(../fonts/the-font-file.woff);
+}
+  
+h1 {
+    font-style: italic; /* font-style is typically used to make a font italic */
+    font-family: 'COUTUREBold';
+    margin: 0;
+    font-size: 38px;
+}
+  
+.wide {
+    font-size: 24px;
+    letter-spacing: .5em;
+}
+  
+.narrow {
+    font-size: 48px;
+    letter-spacing: -.15em;
+}
+
+p.line-height {
+    line-height: 1.5; /* line-height - adjusts the space between lines in wrapped text */
+    text-transform: capitalize; /* text-transform - changes the case of the given text 
+                                   values could be capitalize, uppercase, lowercase, none */
+    text-shadow: #FC0 1px 0 10px; /* text-shadow - can be used to great effect in headings or nother presentational text */
+}
+
+.overflowing {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* text-overflow - truncates overflowing text with a ellipsis */
+  }
+
+/* Using a <background-color> 
+background: green;  sets the background color to green
+
+/* Using a <bg-image> and <repeat-style> 
+background: url("test.jpg") repeat-y;   sets the background image to "test.jpg" and repeats it vertically
+
+/* Using a <box> and <background-color> 
+background: border-box red;     sets the background color to red and applies it to the content box, 
+                                including the padding and border
+
+/* A single image, centered and scaled 
+background: no-repeat center/80% url("../img/image.png");   sets a single background image, which is not repeated, 
+                                                            centered horizontally and vertically. 
+                                                            The image is scaled to 80% of its original size. 
+                                                            The image file is located at "../img/image.png"  
+
+/* Global values 
+background: inherit;    sets the background to inherit the value from its parent element
+background: initial;    sets the background to its initial value, which is typically transparent
+background: revert;     sets the background to its inherited value if there is one, otherwise it reverts to the initial value
+background: revert-layer;  sets the background to its inherited value if there is one, 
+                            otherwise it reverts to the initial value. 
+                            This value is specific to the CSS Layers Level 3 specification 
+background: unset;  sets the background to its inherited value if there is one, otherwise it reverts to the initial value. 
+                    This value is specific to the CSS Cascading and Inheritance Level 3 specification
+
+/* These three lines of CSS are equivalent:
+background: none;
+background: transparent;
+background: repeat scroll 0% 0% / auto padding-box border-box none transparent;
+*/
+
+.warning {
+    background: pink;
+}
+  
+.topbanner {
+    background: url("starsolid.gif") #99f repeat-y fixed;
+}
+
+.border {
+    border: 4mm ridge rgba(211, 220, 50, .6);
+}
+
+.outsetborder {
+    border: 0.5rem outset pink;
+    outline: 0.5rem solid khaki;
+    box-shadow: 0 0 0 2rem skyblue;
+    border-radius: 12px;
+    font: bold 1rem sans-serif;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem;
+}
+
+.borderradius {
+    border: 5px solid lightblue;
+    border-radius: 10px / 20px;
+}
+
+
+/* first set of examples sets the radius for all four corners of the border. 
+   The values can range from one to four, and each value represents the radius 
+   for a specific corner in the order of top-left, top-right, bottom-right, and bottom-left
+/* The syntax of the first radius allows one to four values 
+/* Radius is set for all 4 sides 
+border-radius: 10px;    sets a radius of 10 pixels for all four corners
+
+/* top-left-and-bottom-right | top-right-and-bottom-left 
+border-radius: 10px 5%;     sets a radius of 10 pixels for the top-left and bottom-right corners, 
+                            and 5% for the top-right and bottom-left corners
+
+/* top-left | top-right-and-bottom-left | bottom-right 
+border-radius: 2px 4px 2px;     sets a radius of 2 pixels for the top-left corner, 
+                                4 pixels for the top-right and bottom-left corners, 
+                                and 2 pixels for the bottom-right corner
+
+/* top-left | top-right | bottom-right | bottom-left 
+border-radius: 1px 0 3px 4px;   sets a radius of 1 pixel for the top-left corner, 
+                                no radius for the top-right corner, 
+                                3 pixels for the bottom-right corner, 
+                                and 4 pixels for the bottom-left corner
+
+/* second set of examples sets different radii for horizontal and vertical corners. 
+   The first set of values represents the horizontal radii, and the second set represents the vertical radii
+/* The syntax of the second radius allows one to four values */
+/* (first radius values) / radius 
+border-radius: 10px / 20px;     sets a horizontal radius of 10 pixels and a vertical radius of 20 pixels for all four corners
+
+/* (first radius values) / top-left-and-bottom-right | top-right-and-bottom-left 
+border-radius: 10px 5% / 20px 30px;     sets a horizontal radius of 10 pixels for the top-left and bottom-right corners, 
+                                        a horizontal radius of 5% for the top-right and bottom-left corners, 
+                                        a vertical radius of 20 pixels for the top-left and bottom-right corners, 
+                                        and a vertical radius of 30 pixels for the top-right and bottom-left corners
+
+/* (first radius values) / top-left | top-right-and-bottom-left | bottom-right 
+border-radius: 10px 5px 2em / 20px 25px 30%;
+
+/* (first radius values) / top-left | top-right | bottom-right | bottom-left 
+border-radius: 10px 5% / 20px 25em 30px 35em;
+
+/* last set of examples shows the usage of global values for the border-radius property. 
+   These values can be used to inherit, reset, or revert the border-radius property. 
+/* Global values 
+border-radius: inherit;     inherits the border-radius value from the parent element
+border-radius: initial;     sets the border-radius value to its initial value
+border-radius: revert;      reverts the border-radius value to its parent value
+border-radius: revert-layer;    reverts the border-radius value to its parent value, but only if the parent is a layer
+border-radius: unset;   unsets the border-radius value, allowing it to be inherited or set to its initial value 
+
+
+border-radius: 1em/5em;
+
+/* It is equivalent to: 
+border-top-left-radius: 1em 5em;
+border-top-right-radius: 1em 5em;
+border-bottom-right-radius: 1em 5em;
+border-bottom-left-radius: 1em 5em;
+
+border-radius: 4px 3px 6px / 2px 4px;
+
+/* It is equivalent to: 
+border-top-left-radius: 4px 2px;
+border-top-right-radius: 3px 4px;
+border-bottom-right-radius: 6px 2px;
+border-bottom-left-radius: 3px 4px;
+*/
+
+pre {
+    margin: 20px;
+    padding: 20px;
+    width: 80%;
+    height: 80px;
+}
+  
+pre#example-1 {
+    border: solid 10px;
+    border-radius: 10px 40px 40px 10px;     /* top-left top-right bottom-right bottom-left */
+}
+  
+pre#example-2 {
+    border: groove 1em red;
+    border-radius: 2em;     /* two times the parent element's border-radius */
+}
+  
+pre#example-3 {
+    background: gold;
+    border: ridge gold;
+    border-radius: 13em/3em;    /* horizontal radius then vertical radius */   
+}
+  
+pre#example-4 {
+    border: none;
+    border-radius: 40px 10px;      /* first value for top-left and bottom-right
+                                      second value for top-right and bottom-left */ 
+    background: gold;
+}
+  
+pre#example-5 {
+    border: none;
+    border-radius: 50%;     /* radius is set for all four sides, referring to the width and height of the box */
+    background: burlywood;
+}
+  
+pre#example-6 {
+    border: dotted;
+    border-width: 10px 4px;
+    border-radius: 10px 40px;
+}
+  
+pre#example-7 {
+    border: dashed;
+    border-width: 2px 4px;
+    border-radius: 40px;
+}
+.box {
+    background-color: white;
+    border: 2px solid black;
+}
+
+.box-shadow-1 {
+    box-shadow: 10px 5px 5px red;
+}
+
+.box-shadow-2 {
+    box-shadow: 60px -16px teal;
+}
+
+.box-shadow-3 {
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.box-shadow-4 {
+    box-shadow: inset 5em 1em gold;
+}
+
+.box-shadow-5 {
+    box-shadow: 3px 3px red, -1em 0 .4em olive;
+}
+
+/* Keyword values 
+box-shadow: none;
+
+/* offset-x | offset-y | color 
+box-shadow: 60px -16px teal;
+
+/* offset-x | offset-y | blur-radius | color 
+box-shadow: 10px 5px 5px black;
+
+/* offset-x | offset-y | blur-radius | spread-radius | color 
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+/* inset | offset-x | offset-y | color 
+box-shadow: inset 5em 1em gold;
+
+/* Any number of shadows, separated by commas 
+box-shadow: 3px 3px red, -1em 0 0.4em olive;
+
+/* Global values 
+box-shadow: inherit;
+box-shadow: initial;
+box-shadow: revert;
+box-shadow: revert-layer;
+box-shadow: unset;
+*/
+
+blockquote {
+    padding: 20px;
+    /* three shadows: an inset shadow, a regular drop shadow, and a 2px shadow that creates a border effect 
+       (outline could have been used instead for the third shadow) */
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+      0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.zerooffsetandblur {
+    box-shadow: 0 0 0 2em #f4aab9, 0 0 0 4em #66ccff;
+    margin: 4em;
+    padding: 1em;
+}
+
+/* Keyword values 
+overflow: visible;      default value; it allows the content to overflow the element's box and be visible outside of it
+overflow: hidden;       hides any content that exceeds the element's box but is still there; 
+                        the overflow is clipped at the element's padding box and is not visible
+overflow: clip;     similar to hidden, this value hides the overflow but also clips it at the element's overflow clip edge, 
+                    meaning that the content is cut off at the element's box
+overflow: scroll;   adds scrollbars to the element, allowing the user to scroll and view the overflowed content
+overflow: auto;     automatically adds scrollbars only if the content exceeds the element's box; 
+                    if the content fits within the box, no scrollbars are added
+overflow: hidden visible;      
+
+/* Global values 
+overflow: inherit;      allows the element to inherit the overflow value from its parent element
+overflow: initial;      sets the overflow property to its initial value, which is visible
+overflow: revert;       reverts the overflow property to its inherited value or the default value 
+                        if there is no inherited value
+overflow: unset;    resets the overflow property to its inherited value or the default value 
+                    if there is no inherited value, similar to revert
+*/
+
+.overflow-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  
+.overflow-2 {
+    margin: 2em;
+    font-size: 1.2em;
+}
+  
+p.overflow-3 {
+    width: 5em;
+    height: 5em;
+    border: dotted;
+    margin-top: 0.5em;
+}
+  
+div:nth-of-type(5),
+div:nth-of-type(6) {
+    margin-top: 200px;
+}
+
+p.visible {
+    overflow: visible;
+ }
+  
+p.hidden {
+    overflow: hidden;
+}
+  
+p.clip {
+    overflow: clip;
+    overflow-clip-margin: 1em;
+}
+  
+p.scroll {
+    overflow: scroll;
+}
+  
+p.auto {
+    overflow: auto;
+}
+  
+p.overlay {
+    overflow: overlay;
+}
+
+/* Global values 
+opacity: inherit;   sets the opacity to the same value as its parent element
+opacity: initial;   sets the opacity to its default value, which is 1 (fully opaque)
+opacity: revert;    sets the opacity to the value specified by the cascade (CSS rules) 
+                    or the user agent's default value if no cascade value is found
+opacity: revert-layer;      non-standard value that behaves similarly to revert, 
+                            but only applies to the current layer of the element
+opacity: unset;     resets the opacity to its inherited value if it exists, 
+                    otherwise it sets it to the initial value
+*/
+
+.opacity {
+    background-color: yellow;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.light {
+    opacity: 0.2; /* Barely see the text over the background */
+}
+
+.medium {
+    opacity: 0.5; /* See the text more clearly over the background */
+}
+
+.heavy {
+    opacity: 0.9; /* See the text very clearly over the background */
+}
+
+img.onhover {
+    opacity: 1;
+}
+  
+img.onhover:hover {
+    opacity: 0.5;
+}
+  
+.wrapper {
+    width: 200px;
+    height: 160px;
+    background-color: #f03cc3;
+    background-image: linear-gradient(
+      90deg,
+      transparent 50%,
+      rgba(255, 255, 255, 0.5) 50%
+    );
+    background-size: 20px 20px;
+}

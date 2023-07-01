@@ -86,3 +86,62 @@ iframe {
   display: block;
   margin: 0 auto 1em;
 }
+
+/* The height/width ratio for our video */
+/* all my internal fonts and sizes are set using the same viewport units as the container */
+/* so the content will scale with changes in both container height and width */
+:root {
+  --ratio: 9 / 16;
+  --width: 98vmin; 
+  --height: calc(var(--width) * var(--ratio));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Slide Layout */
+.slide {
+  background: #fff;
+  border: 1px solid;
+  font-size: 3.5vmin;
+  margin: 1vmin auto;
+  padding: 3vmin;
+  width: var(--width);
+  height: var(--height);
+  text-align: center;
+}
+
+
+/* Inside Styles */
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h1, p {
+  margin-bottom: 3vmin;
+}
+
+img {
+  display: block;
+  margin: 3vmin auto;
+  width: 15vmin;
+}
+
+.bigred {
+  color: red;
+  font-size: 3em;
+}
+
+/* Body */
+body {
+  background: #ccc;
+}
+
+/* how to break content outside of a restricted container so that it fills the viewport exactly
+.full-width {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+*/
