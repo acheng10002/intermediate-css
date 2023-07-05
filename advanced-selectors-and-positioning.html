@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Advanced Selectors and Positioning</title>
+    <link rel="stylesheet" href="advanced-selectors-and-positioning.css">
+  </head>
+  <main class="parent">
+    <div class="child group1">
+      <div class="grand-child group1"></div>
+    </div>
+    <div class="child group2">
+      <div class="grand-child group2"></div>
+    </div>
+    <div class="child group3">
+      <div class="grand-child group3"></div>
+    </div>
+  </main>
+  <style>
+    .emojify::before {
+      content: '😎 🥸 🤓';
+  }
+  
+    .emojify::after {
+      content: '🤓 🥸 😎';
+  }
+  </style>
+  <body>
+    <h1>Pseudo-elements</h1>
+      <div> Let's <span class="emojify">emojify</span>this span!</div>
+      <br>
+      <br>
+      <br>
+      <br>
+    <h1>Sibling Selectors</h1>
+      <input type="checkbox" id="toggle">
+      <label for="toggle">&#9776;</label>
+      <nav>
+          <ul class="sibling">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+    <h1>Attribute Selectors</h1>
+      <ul class="attribute">
+        <li class="atb"><a class="att" href="#.pdf">PDF Document</a></li>
+        <li class="atb"><a class="att" href="#.doc">Word Document</a></li>
+        <li class="atb"><a class="att" href="#.jpg">Image File</a></li>
+        <li class="atb"><a class="att" href="#.mp3">Audio File</a></li>
+        <li class="atb"><a class="att" href="#.mp4">Video File</a></li>
+      </ul>
+      <br>
+      <br>
+      <br>
+      <br>
+    <h1>Pseudo-classes</h1>
+      <table>
+          <thead>
+            <tr>
+              <th>Number</th>
+              <th>Player</th>
+              <th>Position</th>
+              <th>Height</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8</td>
+              <td>Marco Belinelli</td>
+              <td>G</td>
+              <td>6-5</td>
+              <td>195</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Carlos Boozer</td>
+              <td>F</td>
+              <td>6-9</td>
+              <td>266</td>
+            </tr>
+            ...
+          </tbody>
+      </table>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Textual Pseudo-elements</h1>
+        <p class="alpha">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum dignissim leo a interdum. Duis eu orci velit.</p>
+        <p class="bravo">Integer eget enim pulvinar leo consectetur tincidunt ut sed erat. Etiam elit velit, molestie eu rutrum vel, vehicula feugiat augue. Vestibulum elementum dictum turpis ac blandit.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Generated Content Pseudo-elements</h1>
+        <ul>
+          <li><a href="https://google.com/">Search the Web</a></li>
+          <li><a href="http://learn.shayhowe.com/">Learn How to Build Websites</a></li>
+        </ul>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Fragment Pseudo-element</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum dignissim leo a interdum. Duis eu orci velit. In urna quam, eleifend in pulvinar vitae, commodo vitae quam. Praesent vel magna nibh. Nullam lectus nibh, pellentesque ac convallis vulputate, ornare vel libero.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Pseudo-element</h1>    
+        <a class="arrow" href="#">Continue Reading</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Relative Positioning</h1>
+        <div class="box" id="one">One</div>
+        <div class="box" id="two">Two</div>
+        <div class="box" id="three">Three</div>
+        <div class="box" id="four">Four</div> 
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Fixed Positioning</h1>
+        <div class="outer">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue tortor
+            eget pulvinar lobortis. Vestibulum ante ipsum primis in faucibus orci luctus
+            et ultrices posuere cubilia Curae; Nam ac dolor augue. Pellentesque mi mi,
+            laoreet et dolor sit amet, ultrices varius risus. Nam vitae iaculis elit.
+            Aliquam mollis interdum libero. Sed sodales placerat egestas. Vestibulum ut
+            arcu aliquam purus viverra dictum vel sit amet mi. Duis nisl mauris, aliquam
+            sit amet luctus eget, dapibus in enim. Sed velit augue, pretium a sem
+            aliquam, congue porttitor tortor. Sed tempor nisl a lorem consequat, id
+            maximus erat aliquet. Sed sagittis porta libero sed condimentum. Aliquam
+            finibus lectus nec ante congue rutrum. Curabitur quam quam, accumsan id
+            ultrices ultrices, tempor et tellus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue tortor
+            eget pulvinar lobortis. Vestibulum ante ipsum primis in faucibus orci luctus
+            et ultrices posuere cubilia Curae; Nam ac dolor augue. Pellentesque mi mi,
+            laoreet et dolor sit amet, ultrices varius risus. Nam vitae iaculis elit.
+            Aliquam mollis interdum libero. Sed sodales placerat egestas. Vestibulum ut
+            arcu aliquam purus viverra dictum vel sit amet mi. Duis nisl mauris, aliquam
+            sit amet luctus eget, dapibus in enim. Sed velit augue, pretium a sem
+            aliquam, congue porttitor tortor. Sed tempor nisl a lorem consequat, id
+            maximus erat aliquet. Sed sagittis porta libero sed condimentum. Aliquam
+            finibus lectus nec ante congue rutrum. Curabitur quam quam, accumsan id
+            ultrices ultrices, tempor et tellus.
+          </p>
+          <div class="box" id="one">One</div>
+        </div>
+      <br>
+      <br>
+      <br>
+      <br> 
+      <h1>Absolute Positioning</h1>
+        <div class="ap">
+          <p class="pap">
+            I am a basic block level element. My adjacent block level elements sit on new
+            lines below me.
+          </p>
+      
+          <p class="pap positioned">
+            By default we span 100% of the width of our parent element, and we are as tall
+            as our child content. Our total width and height is our content + padding +
+            border width/height.
+          </p>
+      
+          <p class="pap">
+            We are separated by our margins. Because of margin collapsing, we are
+            separated by the width of one of our margins, not both.
+          </p>
+      
+          <p class="pap">
+            inline elements <span>like this one</span> and <span>this one</span> sit on
+            the same line as one another, and adjacent text nodes, if there is space on
+            the same line. Overflowing inline elements
+            <span>wrap onto a new line if possible — like this one containing text</span>,
+            or just go on to a new line if not, much like this image will do:
+            <img src="long.jpg" />
+          </p>
+          <p class="block"></p>
+        </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- absolute positioning is used to display text over an image --> 
+      <!-- *absolute positioning shouldn't be used to do entire page layouts; flexbox or grid should be used instead -->
+      <div class="card-container">
+        <img class="card-image" src="https://picsum.photos/450/450">
+         <div class="card-body">
+           <div class="card-heading">This is a cool heading!</div>
+        <p class="card-paragraph">This is some cool placeholder text!</p>   
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Positioning</h1>
+      <div class="parent">
+        Parent
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="child-one child">One</div>
+        <div class="child-two child">Two</div>
+        <div class="child-three child">Three</div>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,464 @@
+/* descendant combinator - ' '; selector before the space represents the ancestor 
+   and the selector after the space represents the descendant 
+main div {
+    
+  } 
+this would select all the child and grand-child divs inside of main */
+
+/* This rule will only select divs with a class of child, using child combinator 
+main > div {
+    /* Our cool CSS 
+}
+  
+/* This rule will only select divs with a class of grand-child, using child combinator 
+main > div > div {
+    /* More cool CSS 
+}
+
+/* This rule will only select the div with the class child group2 
+   the adjacent sibling combinator selects an element that is adjacent to my target 
+   or on the same level of indentation
+.group1 + div {
+    /* Our cool CSS 
+}
+  
+/* This rule will only select the div with the class child group3 
+.group1 + div + div {
+    /* More cool CSS 
+}
+*/
+
+/* This rule will select all of .group1's siblings - in this case the 2nd and 3rd .child divs, 
+   using the general sibling combinator  
+.group1 ~ div {
+    /* Our cool CSS 
+}
+*/
+
+/* This rule will apply to all links 
+a {
+    text-decoration: underline;
+}
+
+/* This will apply to unvisited links 
+a:link {
+    color: blue;
+}
+
+/* And you guessed it, this applies to all links the user has clicked on 
+a:visited {
+    color: purple;
+}
+
+:focus, :hover, :active, :visited can make my page feel much more dynamic and interactive
+
+.myList:nth-child(5) {/* Selects the 5th element with class myList}
+
+.myList:nth-child(3n) { /* Selects every 3rd element with class myList}
+
+.myList:nth-child(3n + 3) { /* Selects every 3rd element with class myList, beginning with the 3rd}
+
+.myList:nth-child(even) {/* Selects every even element with class myList}
+
+  [src] {
+    /* This will target any element that has a src attribute. 
+}
+
+img[src] {
+  /* This will only target img elements that have a src attribute. 
+}
+
+img[src="puppy.jpg"] {
+  /* This will target img elements with a src attribute that is exactly "puppy.jpg" 
+}
+
+[class^='aus'] {
+  /* Classes are attributes too!
+    This will target any class that begins with 'aus':
+    class='austria'
+    class='australia'
+  
+}
+
+[src$='.jpg'] {
+  /* This will target any src attribute that ends in '.jpg':
+  src='puppy.jpg'
+  src='kitten.jpg'
+  
+}
+
+[for*='ill'] {
+  /* This will target any for attribute that has 'ill' anywhere inside it:
+  for="bill"
+  for="jill"
+  for="silly"
+  for="ill"
+  
+}
+*/
+body {
+    color: #666;
+    font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+}
+
+input {
+    display: none;
+}
+
+label,
+.sibling {
+    border: 1px solid #cecfd5;
+    border-radius: 6px;
+}
+
+label {
+    color: #0087cc;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    padding: 5px 9px;
+    transition: all .15s ease;
+}
+  
+label:hover {
+    color: #ff7b29;
+}
+
+input:checked + label { /* label is adjacent sibling of input that is checked */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    color: #9799a7;
+}
+  
+nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .15s ease;
+}
+
+input:checked ~ nav { /* all nav elements that are siblings of and come after the input:checked element */
+    max-height: 500px;
+}
+
+.sibling {
+    list-style: none;
+    margin: 8px 0 0 0;
+    padding: 0;
+    width: 100px;
+}
+  
+li {
+    border-bottom: 1px solid #cecfd5;
+}
+  
+li:last-child {
+    border-bottom: 0;
+}
+  
+a {
+    color: #0087cc;
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff7b29;
+}
+
+.attribute {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+a.att {
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    color: #0087cc;
+    padding-left: 22px;
+    text-decoration: none;
+}
+
+a.att:hover {
+    color: #ff7b29;
+}
+
+.atb {
+    border-bottom: none;
+}
+
+  
+a[href$=".pdf"] {
+    background-image: url("images/pdf.png");
+}
+
+a[href$=".pdf"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/pdf.png");
+}
+
+a[href$=".doc"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/doc.png");
+}
+  
+a[href$=".jpg"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/image.png");
+}
+  
+a[href$=".mp3"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/audio.png");
+}
+  
+a[href$=".mp4"] {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/video.png");
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 6px 15px;
+}
+
+th {
+    background: #42444e;
+    color: #fff;
+    text-align: left;
+}
+  
+tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+}
+
+tr:first-child th:last-child {
+    border-top-right-radius: 6px;
+  }
+
+td {
+    border-right: 1px solid #c6c9cc;
+    border-bottom: 1px solid #c6c9cc;
+}
+  
+td:first-child {
+    border-left: 1px solid #c6c9cc;
+}
+  
+tr:nth-child(even) td {
+    background: #eaeaed;
+  }
+  
+tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+}
+  
+tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+}
+
+.alpha:first-letter,
+.bravo:first-line {
+  color: #ff7b29;
+  font-size: 18px;
+}
+p {
+  margin-bottom: 24px;
+}
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+a:after {
+    color: #9799a7;
+    content: " (" attr(href) ")";
+    font-size: 11px;
+}
+
+::-moz-selection {
+    background: #ff7b29;
+}
+
+::selection {
+    background: #ff7b29;
+}
+
+.arrow {
+    background: #2db34a;
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.arrow:before,
+.arrow:after {
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+
+.arrow:before {
+    border-bottom: 15px solid #2db34a;
+    border-left: 15px solid transparent;
+    border-top: 15px solid #2db34a;
+    left: -15px;
+}
+
+.arrow:after {
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #2db34a;
+    border-top: 15px solid transparent;
+    right: -15px;
+}
+  
+.arrow:hover {
+    background: #ff7b29;
+    color: #fff;
+}
+  
+.arrow:hover:before {
+    border-bottom: 15px solid #ff7b29;
+    border-top: 15px solid #ff7b29;
+}
+
+.arrow:hover:after {
+    border-left: 15px solid #ff7b29;
+}
+
+.card-container {
+    position: relative;
+    width: 100%
+}
+
+.card-image {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.card-body {
+    position: absolute;
+    width: 100%;
+    background: black;
+    opacity: 0.6;
+    color: white;
+    top: 8rem;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: roboto;
+}
+
+.card-heading {
+    position: absolute;
+}
+
+.parent {
+    position: relative; /* only time position relative will be useful is if I want to absolutely position something inside
+                           a container, I need to make sure the container has position relative */
+    height: 200vh;
+}
+
+.child-one {
+    /* 
+    position: relative;
+    left: 10px; 
+    */
+    position: absolute; /* removes this element from the doc's normal flow, and the rest of the doc will render as if 
+                           this element doesn't exist at all 
+                           useful for sticking something in a position, but I don't want anything else to move around it */
+    top: 0;
+}
+
+.child-two {
+    position: sticky; /* sticky is combo of relative and fixed 
+                         element will start as relative, but once I start scrolling out of the page, 
+                         the element's position becomes fixed */
+}
+
+.child-three {
+    position: fixed; /* fixes the element based on the entire HTML element 
+                        and stays in the same position when I scroll */
+    top: 0px; 
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+.box {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: red;
+    color: white;
+}
+  
+#two {
+    position: relative;     /* offsets the element a given amount from its normal position within the document
+                               without the offset affecting other elements */
+    top: 20px;
+    left: 20px;
+    background: blue;
+}
+
+.ap {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+}
+  
+.pap {
+    background: aqua;
+    border: 3px solid blue;
+    padding: 10px;
+    margin: 10px;
+}
+  
+span {
+    background: red;
+    border: 1px solid black;
+}
+  
+.positioned {
+    position: absolute;     /* element is taken out of the flow and other elements are positioned as if it did not exist 
+                               it's positioned relative to its nearest positioned ancestor that is not static */
+    background: yellow;
+    top: 30px;
+    left: 30px;
+}
+
+.block {
+    display: block;
+    height: 1000px;
+    width: 1000px;
+    opacity: 1;
+}
+
+.box1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    color: white;
+}
+  
+#one {
+    position: fixed;    /* similar to absolute positioning except the element's containing block is the initial 
+                           containing block established by the viewport */
+    top: 80px;
+    left: 10px;
+    background: blue;
+}
+  
+.outer {
+    width: 500px;
+    height: 300px;
+    overflow: scroll;
+    padding-left: 150px;
+}
+
