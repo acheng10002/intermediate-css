@@ -1,0 +1,280 @@
+/* :root {
+	--header: 2rem;
+	--footer: 10px;
+	--main: calc(100vh - calc(var(--header) + var(--footer))); /* --header, --footer, and --main are CSS varibles 
+                                                                  calc() handles the mixing of vh, rem, and px 
+                                                                  ** in this example, calc is likely not the best way to go 
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0px solid transparent;
+	background: #7a7a7a;
+}
+
+#container {
+	border: 0px solid transparent;
+	height: 100vh;
+	color: white;
+}
+#container > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#header {
+	height: var(--header);
+	background: #111111;
+}
+#mainContent {
+	height: var(--main);
+	background: #343434;
+	margin-right: auto;
+	margin-left: auto;
+}
+#footer {
+	height: var(--footer);
+	background: #232323;
+} */
+
+#container {
+	display: flex;
+  box-sizing: border-box;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 6px solid black;
+	resize: both;
+	overflow: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#iconHolder {
+	width: min(150px, 100%);   		/* same as max-width: 150px; width: 100% */   
+	    /* max(300px, 50%)             min-width: 300px; width: 50%  ;
+							    	/* if there are 150px available to the image, it will take up all 150px 
+                                     if 150px is not available, the image will switch to 100% of the parent's width 
+                                     min() behaves as a boundary for the max allowed value, 150px *
+                                     I can do basic math inside a min(); ex. width: min(80ch, 100vw - 2rem); */
+	height: min(150px, 100%);
+    box-sizing: border-box;
+    border: 6px solid blue;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+  
+.visual {
+    height: 100px;
+    width: 100%;
+    background: wheat;
+    margin: 0.5rem 0;
+}
+  
+.card {
+    width: clamp(45ch, 50%, 75ch);
+    display: flex;
+    flex-direction: column;
+    background: lightpink;
+    padding: 1rem;
+}
+  
+body {
+    font-family: system-ui, sans-serif;
+}
+  
+h1 {
+    font-size: 1.5rem;
+}
+
+footer {
+	--contentWidth: 400px;
+	
+	background: lightcoral;
+	padding: 2rem max(2rem, 50vw - var(--contentWidth) / 2);
+}
+
+/* body {
+  display: grid;
+  place-items: center;
+  height: 90vh;
+}
+
+h1 {
+  text-align: center;
+  font-family: system-ui, serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);    Use clamp() to set a minimum font size, maximum font size, and allow for scaling 
+										  from the min to the max
+										  now the typography scales with the viewport width of the page
+} */
+
+.error-modal {
+	--color-error-text: red;		   /* store any valid CSS value in the custom property newly declared below */
+	--modal-border: 1px solid black;
+	--modal-font-size: calc(2rem + 5vw);
+  
+	color: var(--color-error-text); 	/* declare the custom property with a double hyphen followed by a case-sensitive, */
+	border: var(--modal-border);		/* hyphen-separated property name */
+	font-size: var(--modal-font-size); 	/* use var(--custom property name in Kebab case) to access the custom property */
+}
+
+.fallback {
+	--color-text: white;
+  
+	background-color: var(--undeclared-property, black); 		/* background-color would be black */
+	color: var(--undeclared-again, var(--color-text, yellow)); /* color would be white since --color-text is declared */
+}
+
+.cool-div {
+	--main-bg: red; 
+}
+  
+.cool-paragraph {
+	background-color: var(--main-bg);	/* only cool-paragraph gets styled with a red background since it's a descendant of */
+}										/* the element (.cool-paragraph) where my custom property is declared */
+  
+.boring-paragraph {
+	background-color: var(--main-bg);
+}
+
+:root {
+	--main-color: red;				    /* declared the custom property on the :root selector */ 
+}
+  
+.excellent-paragraph {
+	color: var(--main-color);			 /* it can be accessed on any other valid selector, here */
+}
+  
+.exciting-paragraph {
+	background-color: var(--main-color); /* or here...any other selector is considered a descendant of the :root selector */
+}
+
+:root.dark {	/* added a class attribute to the html element */
+				/* one scope on the :root selector, for when the :root element has a class of dark */
+	--border-btn: 1px solid rgb(220, 220, 220);
+	--color-base-bg: rgb(18, 18, 18);
+	--color-base-text: rgb(240, 240, 240);
+	--color-btn-bg: rgb(36, 36, 36);
+}
+  
+:root.light {	/* added a class attribute to the html element */
+				/* second scope on the :root selector, for when the :root element ahs a class of light */
+	--border-btn: 1px solid rgb(36, 36, 36);
+	--color-base-bg: rgb(240, 240, 240);
+	--color-base-text: rgb(18, 18, 18);
+	--color-btn-bg: rgb(220, 220, 220);
+}
+
+/* other selectors use the value of any custom properties depending on which class is currently present on the
+   root element */
+body,
+.theme-toggle {
+	color: var(--color-base-text);
+}
+  
+body {
+	background-color: var(--color-base-bg);
+	padding: 10px;
+}
+  
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+  
+p {
+	font-size: 1.5rem;
+}
+  
+.theme-toggle {
+	background-color: var(--color-btn-bg);
+	border: var(--border-btn);
+	font-size: 1.125rem;
+	padding: 10px 20px;
+}
+  
+.theme-toggle:hover {
+	cursor: pointer;
+}
+  
+.theme-toggle:focus {
+	outline: var(--border-btn);
+}
+
+:root {											/* custom properties added to the :root element outside of the media query */
+	--border-btn: 1px solid rgb(36, 36, 36);  /* this is the default theme in case the user doesn't have a preference set */
+	--color-base-bg: rgb(240, 240, 240);	    /* or if a browser doesn;t support the media query */
+	--color-base-text: rgb(18, 18, 18);
+	--color-btn-bg: rgb(220, 220, 220);
+	--theme-name: "light";
+}
+  
+@media (prefers-color-scheme: dark) {	/* prefers-color-scheme media query checks whether a user has selected a theme */
+	:root {								/* preference on their OS/user agent */
+	  --border-btn: 1px solid rgb(220, 220, 220); 	/* this prefers-color-scheme media query is for when a user has a */
+	  --color-base-bg: rgb(18, 18, 18);			/* dark theme set their preferences */
+	  --color-base-text: rgb(240, 240, 240);
+	  --color-btn-bg: rgb(36, 36, 36);
+	  --theme-name: "dark";
+	}
+}
+  
+body {
+	background-color: var(--color-base-bg);
+	color: var(--color-base-text);
+	padding: 10px;
+}
+  
+.theme-name::after {
+	content: var(--theme-name);
+}
+
+.two {
+	--test: 10px;
+	font-size: var(--test);
+}
+  
+.three {
+	--test: 2em;
+	font-size: var(--test);
+}
+
+.two {
+	/* Red if --my-var is not defined */
+	color: var(--my-var, red); 	/* syntax of fallback, like custom properties, allows commas */
+									 /* anything between the first comma and the end of the function is considered a fallback */
+}
+  
+.three {
+	/* pink if --my-var and --my-background are not defined */
+	background-color: var(--my-var, var(--my-background, pink)); 	/* custom property included as a fallback */
+}
+
+.invalid {
+	color: blue;
+}
+  
+.invalid {
+	color: 16px;	/* the value of 16px to the color property is invalid, so the previous color: blue rule is applied */
+}
+
+:root {
+	--text-color: 16px;
+}
+  
+.alsoinvalid {
+	color: blue;
+}
+  
+.alsoinvalid {
+	color: var(--text-color); 	/* this property does not make sense */
+}								/* 1. browser checks if the property in inheritable, but no parent's color property to inherit */
+								/* 2. browser sets the value to its default initial value, which is black */
+  

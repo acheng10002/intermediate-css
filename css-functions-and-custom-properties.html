@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>CSS Functions</title>
+    <link rel="stylesheet" href="css-functions-and-custom-properties.css">
+  </head>
+  <body>
+    <h1>CSS Functions</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>calc()</h1>
+	<div id="container">
+		<header id="header">< header /></header>
+		<main id="mainContent">< main content /></main>
+		<footer id="footer">< footer /></footer>
+	</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>min()</h1>
+    <div id="text">resize me by clicking in the bottom right</div>
+		<div id="container">
+			<img
+				id="iconHolder"
+				src="https://avatars.githubusercontent.com/u/4441966?s=200&v=4"
+				alt="odin"
+			/>
+		</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="card">
+        <h1>clamp()</h1>
+        <div class="visual"></div>
+        <p>Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.</p>
+        <br/>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eveniet beatae veritatis saepe corporis voluptates illo placeat maxime sapiente. Sit facere cumque quidem ad quo, dolores pariatur repudiandae ullam animi?</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="clamp">
+      <h1 class="clamp1">I am fluid typography</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>max()</h1>
+    <footer>
+      Content
+    </footer>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Custom Property Scope</h1>
+    <div class='cool-div'>
+      <p class='cool-paragraph'>Check out my cool, red background!</p>
+    </div>
+    <p class='boring-paragraph'>I'm not in scope so I'm not cool.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>:root Selector</h1>
+    <p class='excellent-paragraph'>Lorem ipsum dolor sit amet.</p>
+    <p class='exciting-paragraph'>Lorem ipsum dolor sit amet.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Creating Themes with Custom Properties</h1>
+    <div class="container">
+      <p>You're now viewing this example with the <span class='theme-name'>dark</span> theme!</p>
+      <button class="theme-toggle">Toggle Theme</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Media Queries</h1>
+    <div class="container">
+      <p>Based on your theme setting in your OS or user agent, you're now viewing this example with the <span class='theme-name'></span> theme!</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Inheritance of custom properties & Custom property fallback values</h1>
+    <div class="one"> <!-- default value -->
+      One
+      <div class="two"> <!-- 10px-->
+        Two
+        <div class="three">Three</div> <!-- 2em-->
+        <div class="four">Four</div> <!-- 10px-->
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Invalid properties</h1>
+    <p class="invalid">This paragraph is initially black.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Invalid custom properties</h1>
+    <p class="alsoinvalid">This paragraph is initially black.</p>
+    <script>
+      // to use the values of custom properties in JS, it's just like standard properties
+      // ex. getComputedStyle(element).getPropertyValue("--my-var");
+      function setTheme() {
+        const root = document.documentElement;
+      const newTheme = root.className === 'dark' ? 'light' : 'dark';
+      root.className = newTheme;
+  
+      document.querySelector('.theme-name').textContent = newTheme;
+      }
+
+      document.querySelector('.theme-toggle').addEventListener('click', setTheme)
+    </script>
+  </body>
+</html>
