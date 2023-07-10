@@ -1,0 +1,83 @@
+/*
+Sass syntax
+$font-color: #fff
+$bg-color: #00f
+ 
+#box
+  color: $font-color
+  background: $bg-color
+
+SCSS syntax
+$font-color: #fff;
+$bg-color: #00f;
+ 
+#box{
+  color: $font-color;
+  background: $bg-color;
+}
+
+LESS syntax
+@font-color: #fff;  instead of the $ sign in SCSS, LESS uses @
+@bg-color: #00f
+ 
+#box{
+  color: @font-color;
+  background: @bg-color;
+}
+
+STYLUS SYNTAX WRITTEN LIKE NATIVE CSS 
+font-color = #fff;
+bg-color = #00f;
+ 
+#box {
+    color: font-color;
+    background: bg-color;
+}
+ 
+OR 
+ 
+STYLUS SYNTAX WITHOUT CURLY BRACES
+font-color = #fff;
+bg-color = #00f;
+ 
+#box 
+    color: font-color;
+    background: bg-color;
+ 
+OR
+ 
+STYLUS SYNTAX WITHOUT COLONS AND SEMICOLONS
+font-color = #fff
+bg-color = #00f
+ 
+#box 
+    color font-color
+    background bg-color
+
+Compiled CSS
+#box {
+  color: #fff;
+  background: #00f;
+}
+
+definition of a site's colors
+@maincolor: #4575D4;
+@accentcolor: #FFA700;
+
+usage of the variables
+a{@maincolor;}
+primary-nav {background-color: @accentcolor;}
+
+usage of the variables inside functions
+a{color:@maincolor;}
+a:hover{color:lighten(@maincolor. 20%)} 
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-weight: 1.2em;
+    a {
+        color: black;
+        &: hover {text-decoration: none;}
+*/
